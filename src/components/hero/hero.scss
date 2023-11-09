@@ -1,3 +1,4 @@
+
 .hero {
   height: calc(100vh - 100px);
   background: linear-gradient(180deg, #0c0c1d, #111132);
@@ -28,6 +29,7 @@
       }
 
       .buttons {
+        z-index: 2;
         button {
           padding: 20px;
           border: 1px solid white;
@@ -50,7 +52,11 @@
     height: 100%;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
+
+    img{
+        border-radius: 30%;
+    }
   }
 
   .slidingTextContainer {

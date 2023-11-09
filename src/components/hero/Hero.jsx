@@ -22,7 +22,6 @@ const textVariants = {
           repeat: Infinity,
         },
       },
-  
 };
 
 const sliderVariants = {
@@ -74,7 +73,7 @@ const Hero = () => {
         Web Developer
       </motion.div>
       <div className="imageContainer">
-        <img src="/profile.jpeg" alt="" />
+        <img src="/profile.png" alt="" />
       </div>
     </div>
   );
