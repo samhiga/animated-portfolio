@@ -1,7 +1,7 @@
 import "./contact.scss";
-import { motion, useInView} from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const variants = {
   initial: {
@@ -19,28 +19,36 @@ const variants = {
 };
 
 const Contact = () => {
+  const ref = useRef();
+  const formRef = useRef();
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
-    const ref = useRef();
-    const formRef = useRef();
-    const [error, setError] = useState(null);
-    const [success, setSuccess] =useState(null);
+  const isInView = useInView(ref, { margin: "-100px" });
 
-    const isInView = useInView(ref, { margin: "-100px" });
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs.sendForm('service_x5doevi', 'template_kk6sn1f', formRef.current, '7lqxLes88hnSkhi7y')
-          .then((result) => {
-              setSuccess(true);
-          }, (error) => {
-            setError(true)
-          });
-      };
+    emailjs
+      .sendForm(
+        "service_x5doevi",
+        "template_kk6sn1f",
+        formRef.current,
+        "7lqxLes88hnSkhi7y"
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
+      );
+  };
 
   return (
     <motion.div
-    ref={ref}
+      ref={ref}
       className="contact"
       variants={variants}
       initial="initial"
@@ -66,7 +74,7 @@ const Contact = () => {
           className="phoneSvg"
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 3, duration: 1 }}
         >
           <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
             <motion.path
@@ -92,11 +100,11 @@ const Contact = () => {
           </svg>
         </motion.div>
         <motion.form
-        ref={formRef}
+          ref={formRef}
           onSubmit={sendEmail}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 3, duration: 1 }}
+          transition={{ delay: 4, duration: 1 }}
         >
           <input type="text" required placeholder="Name" name="name"/>
           <input type="email" required placeholder="Email" name="email"/>
