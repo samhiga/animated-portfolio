@@ -1,6 +1,7 @@
 import "./about.scss";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import resumePDF from "../assets/SamHigaResume.docx.pdf";
 
 const variants = {
   initial: {
@@ -32,7 +33,9 @@ const About = () => {
       animate={isInView && "animate"}
     >
       <motion.div className="textContainer">
-        <p>React.js, Javascript, CSS, HTML, MongoDB, Node.js</p>
+        <p>Curiosity-driven, diving into
+          <br/>  the world of Web Development
+        </p>
         <hr />
       </motion.div>
       <motion.div className="titleContainer">
@@ -63,7 +66,12 @@ const About = () => {
             curiosity to contribute to the development of innovative and
             impactful web applications.
           </p>
-          <button>Download My Resume!</button>
+          <motion.a className="button is-primary" href={resumePDF} download="SamHigaResume.pdf">
+              <span className="icon">
+                <i className="fas fa-download"></i>
+              </span>
+              <span>Download My Resume!</span>
+            </motion.a>
         </div>
       </motion.div>
     </motion.div>

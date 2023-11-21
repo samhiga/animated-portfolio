@@ -12,7 +12,6 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           tranistion={{ duration: 0.5 }}
         >
-          Sam Higa
         </motion.span>
         <div className="social">
           <a href="http://www.linkedin.com/in/sam-higa-b887b9209">

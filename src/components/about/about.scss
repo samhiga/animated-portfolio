@@ -118,7 +118,12 @@
                 padding: 10px;
             }
 
-            button {
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: black;
                 padding: 10px;
                 background-color: orange;
                 border: none;
@@ -127,13 +132,19 @@
                 width: 200px;
                 border-radius: 30px;
                 font-weight: bolder;
+                font-size: 16px;
+                margin-top: 40px;
+
 
                 @include mobile {
                     background-color: transparent;
                     border: 1px solid orange;
                     color: orange;
-                    height: 50px;
-                    width: 150px;
+                    height: 60px;
+                    width: 200px;
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                    margin-top: 15px;
                 }
                 
             }

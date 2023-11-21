@@ -1,5 +1,8 @@
 import "./hero.scss";
 import { motion } from "framer-motion";
+import React from "react";
+import resumePDF from "../assets/SamHigaResume.docx.pdf";
+
 
 const textVariants = {
   initial: {
@@ -51,10 +54,15 @@ const Hero = () => {
           <motion.h2 variants={textVariants}>SAM HIGA</motion.h2>
           <motion.h1 variants={textVariants}>Full Stack Developer</motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
-              See the Latest Work
-            </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+          <motion.a className="button is-primary" href={resumePDF} download="SamHigaResume.pdf">
+              <span className="icon">
+                <i className="fas fa-download"></i>
+              </span>
+              <span>Download My Resume</span>
+            </motion.a>
+            <a href="https://github.com/samhiga" className="button" variants={textVariants}>
+              Check Out my Github
+            </a>
           </motion.div>
           <motion.img
             variants={textVariants}
