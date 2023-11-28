@@ -42,7 +42,7 @@ const About = () => {
         <div className="title">
           <img src="/code.jpeg" alt="code" />
           <h1>
-            <b>Full Stack</b>
+            <motion.b whileHover={{color:"orange"}}>Full Stack</motion.b>
           </h1>
         </div>
         <div className="title">

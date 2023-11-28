@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 const variants = {
   initial: {
-    x: -500,
+    x: -300,
     y: 100,
     opacity: 0,
   },
@@ -43,12 +43,12 @@ const Technologies = () => {
         <div className="title">
           <img src="/code2.webp" alt="" />
           <h1>
-            <motion.b></motion.b> My
+             My
           </h1>
         </div>
         <div className="title">
           <h1>
-            <motion.b>Technologies</motion.b>
+            <motion.b whileHover={{color:"orange"}}>Technologies</motion.b>
           </h1>
           {/* <button>WHAT WE DO?</button> */}
         </div>
